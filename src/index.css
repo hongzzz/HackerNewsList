@@ -1,0 +1,103 @@
+.App-header {
+  height: 50px;
+  background: rgb(255, 102, 0);
+}
+
+.App-header .icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 10px 0 0 30px;
+  border: 1px solid #fff;
+}
+
+.App-header .App-title {
+  display: inline-block;
+  margin: 15px 0 0 30px;
+  vertical-align: top;
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.App-main {
+  background: #ddd;
+  overflow: hidden;
+}
+
+.App-main .list {
+  margin: 30px 80px;
+  padding: 0;
+  background: #fff;
+  list-style: none;
+}
+
+.App-main .list .item {
+  position: relative;
+  padding: 15px 10px 15px 70px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: padding-box;
+}
+
+.App-main .list .item .count {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 70px;
+  margin-top: -8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.App-main .list .item .upvote {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.App-main .list .item .upvote::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  border-left: 6px solid;
+  border-right: 6px solid;
+  border-bottom: 10px solid;
+  border-color: transparent transparent #ccc transparent;
+}
+
+.App-main .list .item .title {
+  display: inline-block;
+  margin-right: 8px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.App-main .list .item .title:hover {
+  text-decoration: underline #000;
+}
+
+.App-main .list .item .host {
+  display: inline-block;
+  color: #666;
+  font-size: 12px;
+}
+
+.App-main .list .item .meta {
+  color: #666;
+  font-size: 12px;
+}
+
+.App-main .list .item .meta span {
+  margin-right: 8px;
+}
+
+.load {
+  height: 800px;
+  text-align: center;
+  line-height: 500px;
+}
