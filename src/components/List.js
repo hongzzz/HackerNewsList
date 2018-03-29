@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Item from './Item'
 import config from '../utils/config'
 import ajax from '../utils/ajax'
 
 class List extends Component {
+  static propTypes = {
+    page: PropTypes.number.isRequired
+  }
+
   constructor (props) {
     super(props)
     this.state = {
@@ -11,19 +16,18 @@ class List extends Component {
     }
   }
 
-  componentDidMount () {
-    ajax('GET', `${config.baseUrl}/topstories.json`)
+  _loadItems () {
+    ajax('GET', `${config.baseUrl}/news?page=${this.props.page}`)
       .then((res) => {
-        return Promise.all(
-          JSON.parse(res).map(item => ajax('GET', `${config.baseUrl}/item/${item}.json`))
-        )
-      })
-      .then((items) => {
-        items = items.map(item => JSON.parse(item))
+        let items = JSON.parse(res)
         this.setState({
           items: items
         })
       })
+  }
+
+  componentWillMount () {
+    this._loadItems()
   }
 
   handleUpVote (index) {

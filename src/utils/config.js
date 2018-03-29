@@ -1,3 +1,3 @@
 export default {
-  baseUrl: 'https://hacker-news.firebaseio.com/v0'
+  baseUrl: 'https://api.hackerwebapp.com'
 }

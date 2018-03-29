@@ -3,6 +3,12 @@ import logo from './icon.ico'
 import List from './components/List'
 
 class App extends Component {
+  constructor (props){
+    super(props)
+    this.state = {
+      page: 1
+    }
+  }
   render () {
     return (
       <div className="App">
@@ -11,7 +17,7 @@ class App extends Component {
           <h2 className="App-title">Hacker News</h2>
         </header>
         <main className="App-main">
-          <List/>
+          <List page={this.state.page}/>
         </main>
       </div>
     )
